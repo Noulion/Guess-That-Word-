@@ -26,8 +26,8 @@ for i in title:
 
 #Word to guess (Fill one up[The default one is for an example])
 
-word = "ice cream" #change after a round, ice cream is only a example.
-hint_text = "This dessert is good in summer and taste delicious!" #change this hint to match the word.
+word = "a" #change after a round, ice cream is only a example.
+hint_text = "" #change this hint to match the word.
 
 print(colored('hint:', 'white')+(colored(hint_text, 'white', 'on_green', ['bold'])), '\n')
 
@@ -43,7 +43,7 @@ if start_guessing == start_guessing:
 
 #Where the fun begins.
 while guess:
-    print(colored("  [Give Up?, type G or g]", 'white'))
+    print(colored("  [Give Up?, type g]", 'white'))
     
     try_i = input(colored("Guess the word!: ", 'white'))
     
@@ -52,7 +52,7 @@ while guess:
         print(colored(f"\n  You guessed '{word}', correct!\n", 'cyan'))
         break
         
-    elif try_i == 'G' or try_i == 'g': #quit.
+    elif try_i == 'g': #quit.
         break
     
     elif try_i == '': #The given input is blank.
