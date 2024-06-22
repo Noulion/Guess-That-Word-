@@ -1,7 +1,7 @@
 #Guess. that .word!
 
 """
-@Noullion in github!
+@Noulion in github!
 
 A small indie game. Goal is to guess the word given by the other player!.
 
@@ -25,11 +25,13 @@ for i in title:
 
 
 #Word to guess (Fill one up[The default one is for an example])
+#change after a around 
+word = "-"
+wordL = len(word)
+hint_text = "-" #change this hint to match the word.
 
-word = "a" #change after a round, ice cream is only a example.
-hint_text = "" #change this hint to match the word.
-
-print(colored('hint:', 'white')+(colored(hint_text, 'white', 'on_green', ['bold'])), '\n')
+print(colored('hints:', 'white')+(colored(hint_text, 'white', 'on_green', ['bold'])))
+print(colored(f" [{wordL}] letter word", 'white'), '\n')
 
 #indicator variable to word as guess.
 guess = word 
@@ -45,14 +47,15 @@ if start_guessing == start_guessing:
 while guess:
     print(colored("  [Give Up?, type g]", 'white'))
     
-    try_i = input(colored("Guess the word!: ", 'white'))
+    try_i = input(colored("  Guess the word!: ", 'white'))
     
     if try_i == word: #win.
         time.sleep(0.6) #Time is here so it gives an edging feeling, same even with wrong guesses
         print(colored(f"\n  You guessed '{word}', correct!\n", 'cyan'))
         break
         
-    elif try_i == 'g': #quit.
+    elif try_i == 'g':
+        print(colored(f"\n  The word was {word}\n", 'magenta')) 
         break
     
     elif try_i == '': #The given input is blank.
