@@ -25,13 +25,16 @@ for i in title:
 
 
 #Word to guess (Fill one up[The default one is for an example])
-#change after a around 
-word = "-"
+
+#change after a round
+word = "Hello"
 wordL = len(word)
+wordL = " __ " * wordL
+wordL2 = len(word)
 hint_text = "-" #change this hint to match the word.
 
 print(colored('hints:', 'white')+(colored(hint_text, 'white', 'on_green', ['bold'])))
-print(colored(f" [{wordL}] letter word", 'white'), '\n')
+print(colored(f" [{wordL}] ({wordL2}) letter word", 'white'), '\n')
 
 #indicator variable to word as guess.
 guess = word 
@@ -61,8 +64,13 @@ while guess:
     elif try_i == '': #The given input is blank.
         print('\n  Blank isnt a word.\n')
     
-    else: #Any guess that is a word and WRONG will be on this.
-        time.sleep(0.6) 
-        s = "" #Had problems using spacer on text.
-        text = 'Try Again'
-        print(colored(f"\n{s:6}{text}, '{try_i}' is wrong!!\n", 'light_red'))
+    else: #Any guess that is a word and WRONG will be on this. 
+        bad_words = ['nigger', 'fucker', 'shit']
+      
+        if try_i == bad_words[1]:
+            print(colored(f"\n{s:6}NO RACIST, '{try_i}' is definitely wrong!!\n", 'light_red'))
+            break
+            
+        time.sleep(0.6)  
+        s = "" #Had problems using spacer on text.#
+        print(colored(f"\n{s:6}Try Again!, '{try_i}' is wrong!!\n", 'light_red'))
